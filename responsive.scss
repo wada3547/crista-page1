@@ -1,0 +1,444 @@
+$pc:1280px; //pc
+$tab:768px; //タブレット
+$sp:375px;  
+
+
+@mixin pc {
+    @media (max-width: ($pc)) {
+      @content;
+    }
+  }
+
+@mixin tab {
+    @media (max-width: ($tab)) {
+      @content;
+    }
+  }
+  @mixin sp {
+    @media (max-width: ($sp)) {
+      @content;
+    }
+}
+
+
+
+//header部分
+
+.header{
+        width: auto;
+    &-bg{//backgroundcolor=black
+        @include pc{
+         width: 694px;
+         height: 634px;
+         position: absolute;
+         left: 569px;
+         top: 0px;
+        } 
+        @include tab{
+         width: 562px;
+         height: 1024px; 
+         position: absolute;
+         left:206px;  
+        }
+         @include sp{
+          width: 283px;
+          height: 667px;
+          position: absolute;
+          left: 92px;
+
+        }
+      }
+     
+
+    &-img{//画像
+         @include pc{
+          height: 534px;
+          width: 89%;
+          left: -13%;
+         }
+         @include tab{
+           background-image: url(./img/mv-img_tb.png);
+           width: 600px;
+           height: 890px;
+           position: relative;
+           left: 0%;
+          }
+          @include sp{
+            background-image: url(./img/mv_img_sp.png);
+            width: 283px;
+            height: 580px;
+          }
+        }
+      &-logo{//ロゴ
+          @include tab{
+            position: absolute;
+            top: 0px;
+            left: -26px;
+          }
+          @include sp{
+            margin: 20px 0px 0px 41px;
+            width: 189px;
+            height: 20px;
+          }
+      }
+      nav{
+        @include tab{
+          margin-right:-250px;
+          width: 270px;
+        }
+        @include sp{
+          margin-right:-400px;
+        }
+      }
+      #show{
+        @include tab{
+          position: relative;
+          bottom: 890px;
+        }
+        @include sp{
+          position: relative;
+          bottom: 593px;
+          margin: 35px 15px 0px 0px;
+        }
+      }
+      #hide{
+        @include sp{
+          margin: 24px 14px 0px 0px;
+        }
+      }
+      &-list img{
+        @include sp{
+          position: relative;
+          left:37px;
+        }
+      }
+    
+ }
+
+
+ //メインロゴ
+
+ @mixin main($left:0px, $top:0px) {
+  position: relative;
+  left:$left;
+  top:$top;
+ }
+
+ .main{
+    &-text{
+
+      @include pc{
+        @include main(656px,120px);
+        margin-right: 575px;
+      }
+      @include tab{
+        @include main(361px,-540px);
+        margin: auto;
+      }
+      @include sp{
+        @include main(74px,-402px);
+    }
+  }
+    &-text1,&-text2{
+      @include tab(){
+        font-size: 16px;
+      }
+    }
+    &-text3{
+      @include tab{
+        font-size: 56px;
+        line-height: 53px;
+      }
+    }
+}
+
+
+//ABOUT US
+
+.article{
+    @include tab{
+      width: auto;
+      position: relative;
+      top: 10px;
+      background-image: url(./img/about_img_tab.png);
+      background-color: #f0f0f0;
+    }
+    @include sp{
+      background-image: url(./img/about-img_sp.png);
+    }
+    
+  &-img{
+    @include pc{
+      position: relative;
+      top: 433px;
+    }
+    @include tab{
+      position: relative;
+      top: 12px;
+    }
+    @include sp{
+      position: relative;
+      top: -38px;
+    }
+  }
+  &-img img{
+    @include pc{
+      width: 972px;
+      
+    }
+    @include tab{
+      width: 100%;
+      height: 113%;
+    }
+    @include sp{
+      width: auto;
+    }
+  }
+
+  &-link{
+  @include pc{
+    padding: 30px 20px;
+  }
+  @include tab{
+    width: 590px;
+    padding: 40px 23px;
+    position: relative;
+    bottom: 150px;
+    left: 89px;
+    margin-top: 52px;
+    
+}
+  @include sp{
+    position: relative;
+    left: 15px;
+    bottom: 155px;
+    width: 345px;
+    height: 441px;
+    padding: 50px 22px;
+  }
+  }
+  &-ttl{
+    @include sp{
+      font-size: 28px;
+    }
+  }
+  &-txt{
+    @include sp{
+      font-size: 14px;
+      line-height: 28px;
+    }
+  }
+  &-btn{
+    @include sp{
+    margin-top:80px ;
+    font-size: 11px;
+  }
+}
+}
+
+
+
+//WORKS&CULTURE
+
+.works{
+   
+  img{
+    @include pc{
+      width: 450px;
+    }
+    @include sp{
+      width: 345px;
+      height: 232px;
+    }
+  }
+  &-contents1{
+    @include tab{
+      display: block;
+    }
+  }
+  &-contents-ttl{
+    @include tab{
+    margin:0px 0px 30px 0px;
+  }
+    @include sp{
+      font-size: 28px;
+    }
+  }
+  &-contents2{
+    @include pc{
+      position: relative;
+      left: 0px;
+    }
+    @include tab{
+      position: relative;
+      left: 30px;
+    }
+    @include sp{
+      position: relative;
+      left: 5px;
+    }
+  }
+  &-contents2-1{
+    @include pc{
+      position: relative;
+      right: 135px;
+      left: -150px;
+    }
+    @include tab{
+      position: relative;
+      left: 30px;
+      margin-left: 0px;
+    }
+    @include sp{
+      position: relative;
+      left: 15px;
+    }
+  }
+  &-btn{
+    @include tab{
+      margin-top: 28px;
+      margin-bottom: 40px;
+    }
+  }
+  &-btn2{
+    @include tab{
+      margin-top: 28px;
+      margin-bottom: 80px;
+    }
+    @include sp{
+      margin-bottom: 40px;
+    }
+  }
+}
+
+
+//topics
+
+.topics{
+  @include tab{
+    width: 92%;
+  }
+  &-ttl{
+    @include tab{
+      display: block;
+    }
+  }
+  &-ttl-p{
+    @include tab{
+      margin-bottom: 29px;
+    }
+    @include sp{
+      font-size: 28px;
+    }
+  }
+  &-txt{
+    @include sp{
+      font-size: 10px;
+    }
+  }
+  &-menu{
+    @include tab{
+      padding: 0px;
+    }
+  }
+  &-menu p{
+    @include sp{
+    margin-top: 29px;
+    }  
+  }
+  &-menu a{
+    @include sp{
+      font-size: 10px;
+    }
+  }
+
+  &-btn{
+    @include tab{
+      float: none;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+
+
+.contact{
+  @include pc{
+    padding: 0px 135px;
+  }
+  @include tab{
+    padding: 0px;
+    
+  }
+  &-flex{
+    @include tab{
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+  &-list{
+    @include tab{
+      position: relative;
+      left: 30px;
+    }
+    @include sp{
+      position: relative;
+      left: 15px;
+    }
+  }
+  &-ttl{
+    @include tab{
+      margin-top: 0px;
+    }
+    @include sp{
+      font-size:28px;
+     
+    }
+  }
+   
+  &-txt{
+    @include tab{
+      width: 67%;
+    }
+    @include sp{
+      width:345px;
+    }
+  }
+  &-btn{
+    @include tab{
+    margin-top: 40px;
+    margin-bottom: 80px;
+    }
+    @include sp{
+    margin-top: 60px;
+    margin-bottom: 40px;
+    }
+  }
+  &-img{
+    @include pc{
+      width: 490px;
+    }
+    @include tab{
+      margin:40px 0px 30px;
+      position: relative;
+      left: 30px;
+    }
+    @include sp{  
+      position: relative;
+      left: 15px;
+  }
+  }
+  &-img img{
+    @include pc{
+      width: 487px;
+    }
+    @include tab{
+      width: 520px;
+      height: 350px;
+    }
+    @include sp{
+      width: 345px;
+      height: 232px;
+    }
+  }
+} 
